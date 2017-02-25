@@ -1,0 +1,55 @@
+{
+  "name": "barrel-defgen",
+  "version": "1.0.0",
+  "description": "Generates type definitions into a single file from a barrel file",
+  "main": "./app/lib.js",
+  "bin": {
+    "barrel-defgen": "./bin/barrel-defgen"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "David Recuenco",
+    "url": "https://github.com/RecuencoJones"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RecuencoJones/barrel-defgen"
+  },
+  "bugs": {
+    "url": "https://github.com/RecuencoJones/barrel-defgen/issues"
+  },
+  "engines": {
+    "node": ">= 6",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "del": "2.2.2",
+    "dts-generator": "2.1.0",
+    "lodash": "4.17.4",
+    "mkdirp": "0.5.1",
+    "yargs": "6.6.0"
+  },
+  "devDependencies": {
+    "jsdoc": "3.4.3",
+    "typescript": "2.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^2.2.1"
+  },
+  "scripts": {
+    "doc": "jsdoc ./app/*.js -d doc -R README.md"
+  },
+  "files": [
+    "app",
+    "bin",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "keywords": [
+    "typescript",
+    "tsc",
+    "definitions",
+    "dts",
+    "dts-generator"
+  ]
+}
