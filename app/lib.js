@@ -17,6 +17,7 @@ const path = require('path'),
  * @property {string} [options.name=PascalCasedCwd] - Id of the namespace to declare.
  * @property {string} [options.out=index.d.ts] - Output file for definitions.
  * @property {string} [options.project=cwd] - Directory of TypeScript project where tsconfig.json exists.
+ * @returns {Promise} promise handler.
  */
 module.exports = (options) => {
   const _options = _.defaults(options, {
@@ -40,6 +41,8 @@ module.exports = (options) => {
     out: tmpDefsFile
   })
   .then(() => {
+    const namespace = _.upperFirst(_.camelCase(_options.name));
+
     let contents = fs.readFileSync(tmpDefsFile).toString()
 
     // split in lines easier to work with
@@ -70,8 +73,11 @@ module.exports = (options) => {
     .filter((line) => !!line.trim());
 
     // add global declaration of namespace
-    contents.unshift(`declare namespace ${_.upperFirst(_.camelCase(_options.name))} {`);
+    contents.unshift(`declare namespace ${namespace} {`);
     contents.push('}');
+
+    // add declaration of module
+    contents.push(`\ndeclare module '${_options.name}' { export = ${namespace}; }`);
 
     // join everything back
     contents = contents.join('\n');
