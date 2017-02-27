@@ -1,5 +1,7 @@
 # 1.1.0
 
+- Added LICENSE.
+- Added travis integration.
 - Fixed issue [#3](https://github.com/RecuencoJones/barrel-defgen/issues/3) - Default export variables were removed.
 
 ## 1.0.1
