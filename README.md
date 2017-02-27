@@ -1,3 +1,6 @@
+[![npm package](https://badge.fury.io/js/barrel-defgen.svg)](https://badge.fury.io/js/barrel-defgen)
+[![Build Status](https://travis-ci.org/RecuencoJones/barrel-defgen.png?branch=develop)](https://travis-ci.org/RecuencoJones/barrel-defgen)
+
 # barrel-defgen
 
 Simple CLI library based on [dts-generator](https://www.npmjs.com/package/dts-generator) to create TypeScript 
