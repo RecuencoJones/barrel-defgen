@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Fixed issue [#3](https://github.com/RecuencoJones/barrel-defgen/issues/3) - Default export variables were removed.
+
 ## 1.0.1
 
 - Added missing doc @returns to lib.

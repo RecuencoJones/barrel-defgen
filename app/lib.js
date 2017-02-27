@@ -55,10 +55,10 @@ module.exports = (options) => {
     .map((line) => line.replace(/^}$/, ''))
 
     // remove all barrel exports
-    .map((line) => line.replace(/export .* from .*/, ''))
+    .map((line) => line.replace(/export .* from '.*';\s*/, ''))
 
     // remove all imports
-    .map((line) => line.replace(/import .* from .*/, ''))
+    .map((line) => line.replace(/import .* from '.*';\s*/, ''))
 
     // replace tabs with spaces
     .map((line) => line.replace(/\t/g, '    '))
