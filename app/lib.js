@@ -57,8 +57,8 @@ module.exports = (options) => {
     // remove all barrel exports
     .map((line) => line.replace(/export .* from '.*';\s*/, ''))
 
-    // remove all imports
-    .map((line) => line.replace(/import .* from '.*';\s*/, ''))
+    // remove all local imports
+    .map((line) => line.replace(new RegExp(`import .* from '${_options.name}.*`), ''))
 
     // replace tabs with spaces
     .map((line) => line.replace(/\t/g, '    '))
